@@ -305,8 +305,9 @@ EOF
 
 	# Fixing an issue where the mongod will not start after reboot where when /run is tmpfs the /var/run/mongodb directory will be deleted at reboot
 	# After reboot, mongod wouldn't start since the pidFilePath is defined as /var/run/mongodb/mongod.pid in the configuration and path doesn't exist
-	sed -i "s/Group=mongodb/Group=mongodb\nExecStartPre=\/bin\/mkdir -p \/var\/log\/mongodb\/\nExecStartPre=\/bin\/chown -R mongodb:mongodb \/var\/log\/mongodb\/\nExecStartPre=\/bin\/mkdir -p \/var\/run\/mongodb\/\nExecStartPre=\/bin\/chown -R mongodb:mongodb \/var\/run\/mongodb\//g" /lib/systemd/system/mongod.service
-
+	sed -i "s/Group=mongodb/Group=mongodb\nExecStartPre=\/bin\/mkdir -p \/var\/log\/mongodb\/\nExecStartPre=\/bin\/chown -R mongodb:mongodb \/var\/log\/mongodb\/\n/g" /lib/systemd/system/mongod.service
+	sudo mkdir -p /var/run/mongodb/
+	sudo chown -R mongodb:mongodb /var/run/mongodb
 }
 
 start_mongodb()
