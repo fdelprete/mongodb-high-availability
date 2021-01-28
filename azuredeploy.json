@@ -236,6 +236,7 @@
     "arbiterTemplateEnabled": "arbiter-resources.json",
     "arbiterTemplateDisabled": "empty-resources.json",
     "sharedTemplateUrl": "[uri(parameters('_artifactsLocation'), concat('shared-resources.json', parameters('_artifactsLocationSasToken')))]",
+    "networkTemplateUrl": "[uri(parameters('_artifactsLocation'), concat('network-resources.json', parameters('_artifactsLocationSasToken')))]",
     "jumpboxTemplateUrl": "[uri(parameters('_artifactsLocation'), concat(variables(concat('jumpboxTemplate', parameters('jumpbox'))), parameters('_artifactsLocationSasToken')))]",
     "arbiterTemplateUrl": "[uri(parameters('_artifactsLocation'), concat(variables(concat('arbiterTemplate', variables('clusterSpec').arbiter)), parameters('_artifactsLocationSasToken')))]",
     "commonSettings": {
@@ -342,6 +343,24 @@
           "storageSettings": {
             "value": "[variables('storageSettings')]"
           },
+          "location":{
+            "value":"[parameters('location')]"
+          }
+        }
+      }
+    },
+    {
+      "name": "network-resources",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-06-01",
+      "resourceGroup": "rg-vnet-aks",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('networkTemplateUrl')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
           "networkSettings": {
             "value": "[variables('networkSettings')]"
           },
