@@ -89,7 +89,10 @@
               "lun": 0,
             
               "caching": "ReadOnly",
-              "createOption": "Empty"
+              "createOption": "Empty",
+              "managedDisk": {
+                  "storageAccountType": "StandardSSD_LRS"
+                }
             },
             {
               "name": "[concat('vmMember', parameters('machineSettings').machineIndex,'_DataDisk1')]", 
