@@ -26,9 +26,6 @@
     "subnetName": {
       "value": "subnet-mongodb"
     },
-    "addressPrefix": {
-      "value": "10.66.0.0/16"
-    },
     "subnetPrefix": {
       "value": "10.66.51.0/24"
     },

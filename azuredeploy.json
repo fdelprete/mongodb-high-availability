@@ -64,13 +64,6 @@
         "description": "Subnet name for the virtual network that resources will be provisioned in to"
       }
     },
-    "addressPrefix": {
-      "type": "string",
-      "defaultValue": "10.66.0.0/16",
-      "metadata": {
-        "description": "The network address space for the virtual network"
-      }
-    },
     "subnetPrefix": {
       "type": "string",
       "defaultValue": "10.66.51.0/24",
@@ -270,7 +263,6 @@
     },
     "networkSettings": {
       "virtualNetworkName": "[parameters('virtualNetworkName')]",
-      "addressPrefix": "[parameters('addressPrefix')]",
       "subnetName": "[parameters('subnetName')]",
       "subnetPrefix": "[parameters('subnetPrefix')]",
       "subnetRef": "[resourceId(parameters('virtualNetworkRg'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'),  parameters('subnetName'))]",
