@@ -98,22 +98,6 @@
               
               "caching": "ReadOnly",
               "createOption": "Empty"
-            },
-            {
-              "name": "[concat('vmMember', parameters('machineSettings').machineIndex,'_DataDisk2')]", 
-              "diskSizeGB": "[parameters('machineSettings').dataDiskSize]",
-              "lun": 2,
-             
-              "caching": "ReadOnly",
-              "createOption": "Empty"
-            },
-            {
-              "name": "[concat('vmMember', parameters('machineSettings').machineIndex,'_DataDisk3')]", 
-              "diskSizeGB": "[parameters('machineSettings').dataDiskSize]",
-              "lun": 3,
-             
-              "caching": "ReadOnly",
-              "createOption": "Empty"
             }
           ]
         },

@@ -144,7 +144,7 @@
     ,
     "_artifactsLocation": {
          "type": "string",
-         "defaultValue": "https://www.originhamster.com/cgi-portal-azure/cli-scripts/-/raw/master/mongodb-high-availability/",
+         "defaultValue": "https://raw.githubusercontent.com/fdelprete/mongodb-high-availability/main/",
          "metadata": {
             "description": "The base URI where artifacts required by this template are located"
          }
@@ -186,8 +186,8 @@
       "totalMemberCount": 4,
       "arbiter": "Enabled",
       "vmTemplate": "[uri(parameters('_artifactsLocation'), concat('member-resources-D2.json', parameters('_artifactsLocationSasToken')))]",
-      "storageAccountCount": 2,
-      "dataDiskSize": 256
+      "storageAccountCount": 1,
+      "dataDiskSize": 128
     },
     "tshirtSizeLarge": {
       "vmSizeMember": "[concat('Standard_', parameters('vmSeries'), '2_v2')]",
