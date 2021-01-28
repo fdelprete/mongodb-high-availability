@@ -181,8 +181,8 @@ install_mongodb()
 	log "Downloading MongoDB package $PACKAGE_NAME from $PACKAGE_URL"
 
 	# Configure mongodb.list file with the correct location
-	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
-	echo "deb ${PACKAGE_URL} "$(lsb_release -sc)"/mongodb-org/4.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 20691eec35216c63caf66ce1656408e390cfb1f5
+	echo "deb ${PACKAGE_URL} "$(lsb_release -sc)"/mongodb-org/4.4 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 
 	# Install updates
 	apt-get -y update
