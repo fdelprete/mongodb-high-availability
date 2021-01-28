@@ -17,6 +17,9 @@
     "vmSeries": {
       "value": "D"
     },
+    "virtualNetworkRg": {
+      "value": "rg-vnet-aks"
+    },
     "virtualNetworkName": {
       "value": "vnet-aks"
     },
@@ -36,7 +39,7 @@
       "value": "Disabled"
     },
     "tshirtSize": {
-      "value": "Medium"
+      "value": "Staging"
     },
     "osFamily": {
       "value": "Ubuntu"

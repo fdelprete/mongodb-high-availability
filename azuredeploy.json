@@ -43,6 +43,13 @@
         "description": "Virtual machine series to use for data nodes in cluster"
       }
     },
+    "virtualNetworkRg": {
+      "type": "string",
+      "defaultValue": "rg-vnet-aks",
+      "metadata": {
+        "description": "The name of the resource group in which there is the virtual network provisioned for the MongoDB deployment"
+      }
+    },
     "virtualNetworkName": {
       "type": "string",
       "defaultValue": "vnet-aks",
@@ -91,14 +98,15 @@
     },
     "tshirtSize": {
       "type": "string",
-      "defaultValue": "Medium",
+      "defaultValue": "Staging",
       "allowedValues": [
         "XSmall",
         "Small",
         "Medium",
         "Large",
         "XLarge",
-        "XXLarge"
+        "XXLarge",
+        "Staging"
       ],
       "metadata": {
         "description": "T-shirt size of the MongoDB deployment"
@@ -179,6 +187,16 @@
       "storageAccountCount": 1,
       "dataDiskSize": 128
     },
+    "tshirtSizeStaging": {
+      "vmSizeMember": "[concat('Standard_', parameters('vmSeries'), '2_v2')]",
+      "vmSizeArbiter": "[concat('Standard_', parameters('vmSeries'), '1_v2')]",
+      "numberOfMembers": 1,
+      "totalMemberCount": 2,
+      "arbiter": "Enabled",
+      "vmTemplate": "[uri(parameters('_artifactsLocation'), concat('member-resources-D2.json', parameters('_artifactsLocationSasToken')))]",
+      "storageAccountCount": 1,
+      "dataDiskSize": 128
+    },
     "tshirtSizeMedium": {
       "vmSizeMember": "[concat('Standard_', parameters('vmSeries'), '2_v2')]",
       "vmSizeArbiter": "[concat('Standard_', parameters('vmSeries'), '1_v2')]",
@@ -255,7 +273,7 @@
       "addressPrefix": "[parameters('addressPrefix')]",
       "subnetName": "[parameters('subnetName')]",
       "subnetPrefix": "[parameters('subnetPrefix')]",
-      "subnetRef": "[resourceId('rg-vnet-aks', 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'),  parameters('subnetName'))]",
+      "subnetRef": "[resourceId(parameters('virtualNetworkRg'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'),  parameters('subnetName'))]",
       "machineIpPrefix": "[parameters('nodeAddressPrefix')]"
     },
     "machineSettings": {
@@ -323,7 +341,9 @@
     "storageAccountForXXLarge_12": "4",
     "storageAccountForXXLarge_13": "5",
     "storageAccountForXXLarge_14": "6",
-    "storageAccountForXXLarge_15": "7"
+    "storageAccountForXXLarge_15": "7", 
+    "storageAccountForStaging_0": "0",
+    "storageAccountForStaging_1": "0"
   },
   "resources": [
     {
