@@ -1,17 +1,7 @@
-# Deploy a highly available MongoDB installation on Ubuntu and CentOS virtual machines
+# Deploy a highly available MongoDB installation on Ubuntu virtual machines (modified)
 
-![Azure Public Test Date](https://azurequickstartsservice.blob.core.windows.net/badges/mongodb-high-availability/PublicLastTestDate.svg)
-![Azure Public Test Result](https://azurequickstartsservice.blob.core.windows.net/badges/mongodb-high-availability/PublicDeployment.svg)
+Originale scripts here: https://github.com/Azure/azure-quickstart-templates/tree/master/mongodb-high-availability
 
-![Azure US Gov Last Test Date](https://azurequickstartsservice.blob.core.windows.net/badges/mongodb-high-availability/FairfaxLastTestDate.svg)
-![Azure US Gov Last Test Result](https://azurequickstartsservice.blob.core.windows.net/badges/mongodb-high-availability/FairfaxDeployment.svg)
-
-![Best Practice Check](https://azurequickstartsservice.blob.core.windows.net/badges/mongodb-high-availability/BestPracticeResult.svg)
-![Cred Scan Check](https://azurequickstartsservice.blob.core.windows.net/badges/mongodb-high-availability/CredScanResult.svg)
-
-[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fmongodb-high-availability%2Fazuredeploy.json) 
-[![Deploy To Azure US Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fmongodb-high-availability%2Fazuredeploy.json)
-[![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fmongodb-high-availability%2Fazuredeploy.json)
 
 This template creates a multi-server MongoDB deployment on Ubuntu and CentOS virtual machines, and configures the MongoDB installation for high availability using a replica set.
 The template also provisions storage accounts, virtual network, availability set, network interfaces, VMs, disks and other infrastructure and runtime resources required by the installation.
@@ -62,7 +52,7 @@ az group deployment create --resource-group <my-resource-group> --template-uri h
 ## NDA (2020-01-27)
 Removed vnet creation.
 
-Only the subnet is provisioned: the vnet and the resource group for the vnet must be create in advance.
+Only the subnet is provisioned: the vnet and the resource group for the vnet must be created in advance.
 
 Modified the shell script extension in order to support ubuntu 18.04-LTS and install MongoDb 4.4.x
 
