@@ -255,7 +255,7 @@
       "addressPrefix": "[parameters('addressPrefix')]",
       "subnetName": "[parameters('subnetName')]",
       "subnetPrefix": "[parameters('subnetPrefix')]",
-      "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'),  parameters('subnetName'))]",
+      "subnetRef": "[resourceId('rg-vnet-aks', 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'),  parameters('subnetName'))]",
       "machineIpPrefix": "[parameters('nodeAddressPrefix')]"
     },
     "machineSettings": {
