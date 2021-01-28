@@ -9,7 +9,7 @@
       "value": "GEN-PASSWORD"
     },
     "storageAccountNamePrefix": {
-      "value": "GEN-UNIQUE-8"
+      "value": "sacgipmongo"
     },
     "storageAccountType": {
       "value": "Standard_LRS"
@@ -18,10 +18,10 @@
       "value": "D"
     },
     "virtualNetworkName": {
-      "value": "GEN-VNET-NAME"
+      "value": "vnet-aks"
     },
     "subnetName": {
-      "value": "GEN-VNET-SUBNET1-NAME"
+      "value": "subnet-mongodb"
     },
     "addressPrefix": {
       "value": "10.66.0.0/16"
@@ -48,7 +48,7 @@
       "value": "rs0"
     },
     "replicaSetKey": {
-      "value": "GEN-UNIQUE-8"
+      "value": "ej428jP6"
     }
   }
 }
