@@ -59,4 +59,13 @@ In the above deployment sequence, steps #1 and #2 will have to complete first be
 az group create --name <resource-group-name> --location <resource-group-location> #use this command when you need to create a new resource group for your deployment
 az group deployment create --resource-group <my-resource-group> --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mongodb-high-availability/azuredeploy.json
 ```
+## NDA (2020-01-27)
+Removed vnet creation.
 
+Only the subnet is provisioned: the vnet and the resource group for the vnet must be create in advance.
+
+Modified the shell script extension in order to support ubuntu 18.04-LTS and install MongoDb 4.4.x
+
+Added a new tShirt size named "Staging" with 2 node members e 1 arbiter, 1 storage account
+
+Both the tShirt size Medium and the size Staging are using the member-resoruces-D2-json template. Here the number of disk has been reduced to two disks and the disk type has been set to SSD.
