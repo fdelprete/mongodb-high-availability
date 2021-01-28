@@ -1,6 +1,6 @@
 # Deploy a highly available MongoDB installation on Ubuntu virtual machines (modified)
 
-Originale scripts here: https://github.com/Azure/azure-quickstart-templates/tree/master/mongodb-high-availability
+Original scripts here: https://github.com/Azure/azure-quickstart-templates/tree/master/mongodb-high-availability
 
 
 This template creates a multi-server MongoDB deployment on Ubuntu and CentOS virtual machines, and configures the MongoDB installation for high availability using a replica set.
@@ -58,4 +58,4 @@ Modified the shell script extension in order to support ubuntu 18.04-LTS and ins
 
 Added a new tShirt size named "Staging" with 2 node members e 1 arbiter, 1 storage account
 
-Both the tShirt size Medium and the size Staging are using the member-resoruces-D2-json template. Here the number of disk has been reduced to two disks and the disk type has been set to SSD.
+Both the tShirt size Medium and the size Staging are using the member-resources-D2-json template. Here the number of disk has been reduced to two disks and the disk type has been set to SSD.
